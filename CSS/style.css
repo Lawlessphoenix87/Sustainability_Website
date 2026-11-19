@@ -1,0 +1,169 @@
+     /* Selects all h1 headings on this page */
+    h1 {
+
+         font-family: 'Courier New', Courier, monospace;
+            color: lightblue;
+
+    }
+
+    ul {
+         font-family: 'Courier New', Courier, monospace;
+            color: green;
+    }
+
+    /* Selects the element with the moving box class */
+    .moving_box {
+
+        /* Sets the width of the box to 100 pixels */
+        width: 100px;
+        /* Sets the height of the box to 100 pixels */
+        height: 100px;
+        /* Gives the box a blue background */
+        background-color: rgb(0, 240, 240);
+    }
+
+    /* Main container for the dam illustration */
+    .dam-scene {
+
+        /* Give the scene a fixed working area */
+        width: 700px;
+        height: 350px;
+
+        /* Creates a light blue sky background */
+        background-color:lightblue;
+
+        /* Allows us to position the dam pieces inside this area */
+        position: relative;
+
+        /* Hides anything that accidently extends outside the scene */
+        overflow:hidden;
+    }
+
+    /* Water held behind the dam */
+    .reservoir {
+
+        /* Sets the size of the reservoir */
+        width: 280px;
+        height: 180px;
+
+        /* Gives the water the blue color */
+        background-color:dodgerblue;
+
+        /* Positions the water toward the left side */
+        position:absolute;
+        left: 0;
+        bottom: 0;   
+    }
+
+    /* Main concrete dam wall */
+    .dam-wall {
+
+        /* Sets the dam's dimensions */
+        width: 120px;
+        height: 280px;
+
+        /* Gives the dam the gray color */
+        background-color:gray;
+
+        /* Positions the dam near the center */
+        position: absolute;
+        left: 280px;
+        bottom: 0;
+    }
+
+    /* Dark opening where water exits the dam */
+    .dam-opening {
+        width: 70px;
+        height: 90px;
+        background-color: #222;
+
+        /* Positions the opening inside the concrete wall */
+        position: absolute;
+        left: 25px;
+        bottom: 0;
+
+        /* Gives the opening a subtle inner edge */
+        border: 3px solid #333;
+    }
+
+    /* Movable gate inside the dam */
+    .dam-gate {
+
+        /* Sets the gate's dimensions */
+        width: 70px;
+        height: 90px;
+
+        /* Gives the gate a darger metal color */
+        background-color:dimgray;
+
+        /* Positions the gate inside the dam wall */
+        position:absolute;
+        left: 25px;
+        bottom: 0;
+
+        /* Rounds the bottom corners slightly */
+        border-radius: 4px;
+
+        /* Adds a subtle border to define the metal gate */
+        border: 3px solid #444;
+    }
+
+    /* Area where water will flow out */
+    .water-outlet {
+
+        /* Sets the outlet's starting dimensions */
+        width: 200px;
+        height: 40px;
+
+        /* Sets the water color to blue */
+        background-color:dodgerblue;
+
+        /* Sets the position to the right of the dam */
+        position:absolute;
+        left: 305px;
+        bottom: 0;
+
+        /* Rounds the water's edges */
+        border-radius: 50% 50% 0 0;
+
+        z-index: 2;
+
+        /* Creates alternating shades of blue */
+        background-image:repeating-linear-gradient(110deg, dodgerblue 0px, dodgerblue 20px, deepskyblue 20px, deepskyblue 40px);
+
+        /* Sets the size of the repeating water pattern */
+        background-size: 100px 100%;
+    }
+
+    /* Shared appearance for all the water droplets */
+    .droplet {
+
+        /* Sets the width, height, and color for each droplet */
+        width: 18px;
+        height: 18px;
+        background-color:deepskyblue;
+
+        /* Makes the droplet circular */
+        border-radius: 50%;
+
+        /* Allows independent positioning */
+        position:absolute;
+    }
+
+    /* Position the first droplet */
+    .droplet-one {
+        left: 20px;
+        top: -10px;
+    }
+
+    /* Position the second droplet */
+    .droplet-two {
+        left: 80px;
+        top: 5px;
+    }
+
+    /* Position the third droplet */
+    .droplet-three {
+        left: 145px;
+        top: -5px;
+    }

@@ -1,0 +1,129 @@
+/* Select the lvl 1 headers */
+h1 {
+    /* Animation that will fade in the header */
+    animation: fadeIn 3s ease-in;
+}
+
+    /* Defines the animation named fadeIn */
+    @keyframes fadeIn {
+
+        /* Starting point: completely transparent */
+        from {
+            opacity: 0;
+        }
+
+        /* Ending point: completely visible */
+        to {
+            opacity: 1;
+        }
+    }
+
+/* Select the moving box (for early practice and not on page anymore) */
+.moving_box {
+        /* Runs the moveRight animation over 4 seconds infinitely */
+        animation: moveRight 4s linear infinite;
+
+        /* Alternate movement direction between left and right */
+        animation-direction: alternate;
+    }
+
+    /* Defines the movement animation */
+    @keyframes moveRight {
+
+        /* Starting position */
+        from {
+            transform: translateX(0px);
+        }
+
+        /* Ending position */
+        to {
+            transform:translateX(300px);
+        }
+    }
+
+/* Select the dam gate */
+.dam-gate {
+
+    /* Smoothly animates changes to the gate's position */
+    transition: transform 1s ease-in-out;
+}
+
+/* Activates when the mouse hovers over the dam scene */
+.dam-scene:hover .dam-gate {
+
+    /* Moves the gate upward by 50 pix */
+    transform: translatey(-50px);
+}
+
+/* Sets the water's starting appearance */
+.water-outlet {
+    
+    /* Make the water invisible while the gate is closed */
+    opacity: 0;
+
+    /* Smoothly fades the water in and out */
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Animate the water while the dam is hovered over */
+.dam-scene:hover .water-outlet {
+
+    /* Makes the water visible */
+    opacity: 1;
+
+    /* Rolls the water continuously while the gate is open */
+    animation: waterFlow 1.2s linear infinite;
+}
+
+/* Defines the repeating movement of the water */
+@keyframes waterFlow {
+
+   /* Water's starting position */
+   from {
+        background-position: 0 0;
+    }
+
+    /* Moves the water pattern forward */
+    to {
+        background-position: 100px 0;
+    }
+}
+
+
+/* Defines the movement of a water droplet */
+@keyframes splash {
+
+    /* Droplet starts at its original position */
+    0% {
+        transform:translateY(0) scale(1);
+        opacity: 1;
+    }
+
+    /* Droplet moves upward and shrinks */
+    50% {
+        transform:translateY(-25px) scale(0.8);
+        opacity: 0.8;
+    }
+
+    /* Droplet falls back and disappears */
+    100% {
+        transform:translateY(10px) scale(0.4);
+        opacity: 0;
+    }
+}
+
+/* Animates all the droplets while the dam is hovered over */
+.dam-scene:hover .droplet {
+
+    /* Run the splash animation repeatedly */
+    animation: splash 1s ease-in-out infinite;
+}
+
+/* Delays the second and third droplets slightly */
+.dam-scene:hover .droplet-two {
+    animation-delay: 0.3s;
+}
+
+.dam-scene:hover .droplet-three {
+    animation-delay: 0.6s;
+}
